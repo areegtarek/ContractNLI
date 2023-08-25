@@ -13,46 +13,46 @@ Natural language inference (NLI): Document-level three-class classification (one
 
 Our dataset is provided as JSON files.
 
-{
-  "documents": [
-    {
-      "id": 1,
-      "file_name": "example.pdf",
-      "text": "NON-DISCLOSURE AGREEMENT\nThis NON-DISCLOSURE AGREEMENT (\"Agreement\") is entered into this ...",
-      "document_type": "search-pdf",
-      "url": "https://examplecontract.com/example.pdf",
-      "spans": [
-        [0, 24],
-        [25, 89],
-        ...
-      ],
-      "annotation_sets": [
-        {
-          "annotations": {
-            "nda-1": {
-              "choice": "Entailment",
-              "spans": [
-                12,
-                13,
-                91
-              ]
-            },
-            "nda-2": {
-              "choice": "NotMentioned",
-              "spans": []
-            },
-            ...
-          }
+      {
+        "documents": [
+          {
+            "id": 1,
+            "file_name": "example.pdf",
+            "text": "NON-DISCLOSURE AGREEMENT\nThis NON-DISCLOSURE AGREEMENT (\"Agreement\") is entered into this ...",
+            "document_type": "search-pdf",
+            "url": "https://examplecontract.com/example.pdf",
+            "spans": [
+              [0, 24],
+              [25, 89],
+              ...
+            ],
+            "annotation_sets": [
+              {
+                "annotations": {
+                  "nda-1": {
+                    "choice": "Entailment",
+                    "spans": [
+                      12,
+                      13,
+                      91
+                    ]
+                  },
+                  "nda-2": {
+                    "choice": "NotMentioned",
+                    "spans": []
+                  },
+                  ...
+                }
+              }
+            ]
+          },
+          ...
+        ],
+        "labels": {
+          "nda-1": {
+            "short_description": "Explicit identification",
+            "hypothesis": "All Confidential Information shall be expressly identified by the Disclosing Party."
+          },
+          ...
         }
-      ]
-    },
-    ...
-  ],
-  "labels": {
-    "nda-1": {
-      "short_description": "Explicit identification",
-      "hypothesis": "All Confidential Information shall be expressly identified by the Disclosing Party."
-    },
-    ...
-  }
-}
+      }
